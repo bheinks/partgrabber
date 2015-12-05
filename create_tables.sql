@@ -2,6 +2,10 @@
 -- for PCPartPicker Database
 -- Group G19
 
+CREATE DATABASE partgrabber;
+
+USE partgrabber;
+
 CREATE TABLE `cpu` (
   `comp_id` int(5) NOT NULL,
   `manaufacturer` varchar(32) NOT NULL,
