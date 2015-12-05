@@ -61,10 +61,10 @@ CREATE TABLE `retailer` (
 );
 
 CREATE TABLE `saved_build` (
-  `username` int(32) NOT NULL,
-  `build_name` int(32) NOT NULL,
+  `username` varchar(32) NOT NULL,
+  `build_name` varchar(32) NOT NULL,
   `description` varchar(256) NOT NULL,
-  `cost` float(3,2) NOT NULL,
+  `cost` float(6,2) NOT NULL,
   PRIMARY KEY (`username`, `build_name`)
 );
 

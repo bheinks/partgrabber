@@ -4,9 +4,9 @@
 	<?php require "database.inc.php"; ?>
 	
 	<?php
-	// Username/Password login queries
+	// Query user table if login form data sent
 	if(isset($_POST['username'])){
-		$valid_login = false;
+		$_SESSION['valid_login'] = false;
 		$username_given = $_POST['username'];
 		$password_given = $_POST['password'];
 		$sql = "SELECT username, password
@@ -20,7 +20,8 @@
 			}
 			if($password == $password_given){
 				$login_msg = "User ".$username." logged in!";
-				$valid_login = true;
+				$_SESSION['valid_login'] = true;
+				$_SESSION['username'] = $username;
 			}
 			else
 				$login_msg = "Incorrect password";
@@ -28,6 +29,18 @@
 		else
 			$login_msg = "Username not found!";			
 	}
+	//unset($_POST);	
+	
+	// Get session login data if exists
+	if((isset($_SESSION['valid_login'])) && ($_SESSION['valid_login'] == true)){
+		$username = $_SESSION['username'];
+		$login_msg = "User ".$username." logged in!";
+	}else{
+		$login_msg = "";
+		$username = "";
+	}
+	
+	
 	?>
 </head>
 <body>
@@ -58,5 +71,9 @@
 			</tr>
 		</table></form>
 	</div>
+	
+	My Saved Builds!
+	
+	
 </body>
 </html>
