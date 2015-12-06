@@ -1,55 +1,31 @@
+<?php session_start(); ?>
+
 <html>
 <head>
 	<title>PartGrabber [test version]</title>
 	<?php require "database.inc.php"; ?>
 	
-	<?php
-	// Query user table if login form data sent
-	if(isset($_POST['username'])){
-		$_SESSION['valid_login'] = false;
-		$username_given = $_POST['username'];
-		$password_given = $_POST['password'];
-		$sql = "SELECT username, password
-				FROM user
-				WHERE username='$username_given'";
-		$result = $conn->query($sql);
-		if(mysqli_num_rows($result)>0){
-			while($row = $result->fetch_assoc()) {
-				$username = $row["username"];
-				$password = $row["password"];
-			}
-			if($password == $password_given){
-				$login_msg = "User ".$username." logged in!";
-				$_SESSION['valid_login'] = true;
-				$_SESSION['username'] = $username;
-			}
-			else
-				$login_msg = "Incorrect password";
-		}
-		else
-			$login_msg = "Username not found!";			
-	}
-	//unset($_POST);	
-	
-	// Get session login data if exists
-	if((isset($_SESSION['valid_login'])) && ($_SESSION['valid_login'] == true)){
-		$username = $_SESSION['username'];
-		$login_msg = "User ".$username." logged in!";
-	}else{
-		$login_msg = "";
-		$username = "";
-	}
-	
-	
+	<?php	
+		// Get session login data if exists
+		if((isset($_SESSION['valid_login'])) && ($_SESSION['valid_login'] == true)){
+			$username = $_SESSION['username'];
+			$login_msg = "User ".$username." logged in!";
+			$valid_login = true;
+		}else{
+			$username = "";
+			$login_msg = $_SESSION['login_msg'];
+			$valid_login = false;
+		}	
 	?>
+	
 </head>
 <body>
 	
-	Welcome to PCPartPicker!<br>
+	Welcome to PartGrabber!<br>
 	<br>
 	<br>
 	<div style="position:absolute; top:0px; right:0px; border:1px solid gray;">
-		<form action="index.php" method="POST"><table>
+		<form action="loginredirect.php" method="POST"><table>
 			<tr>
 				<td align="center" colspan="2" style="font-weight: bold;">
 					Please log in
@@ -73,7 +49,91 @@
 	</div>
 	
 	My Saved Builds!
-	
+	<?php
+		$sql = "SELECT *
+				FROM saved_build
+				WHERE username='$username'";
+		$result = $conn->query($sql);		
+	?>
+	<table border>
+		<tr>
+			<td>[part]</td>
+			<?php
+				while($row = $result->fetch_array())
+					echo "<td>".$row["build_name"]."</td>";
+			?>
+			<td></td>
+		</tr><tr>
+			<td>CPU</td>
+			<?php
+				for($x = 0; $x < mysqli_num_rows($result); $x++){
+					$row = $result->fetch_array();
+					if($row["build_name"] == " ")
+						echo "<td>".$row["build_name"]."</td>";
+					else
+						echo "<td>Add one!</td>";
+				}					
+			?>
+			<td rowspan="6">
+				Add a new build!
+			</td>
+		</tr><tr>
+			<td>RAM</td>
+			<?php
+				for($x = 0; $x < mysqli_num_rows($result); $x++){
+					$row = $result->fetch_array();
+					if($row["build_name"] == " ")
+						echo "<td>".$row["build_name"]."</td>";
+					else
+						echo "<td>Add one!</td>";
+				}					
+			?>
+		</tr><tr>
+			<td>Motherboard</td>
+			<?php
+				for($x = 0; $x < mysqli_num_rows($result); $x++){
+					$row = $result->fetch_array();
+					if($row["build_name"] == " ")
+						echo "<td>".$row["build_name"]."</td>";
+					else
+						echo "<td>Add one!</td>";
+				}					
+			?>
+		</tr><tr>
+			<td>Storage</td>
+			<?php
+				for($x = 0; $x < mysqli_num_rows($result); $x++){
+					$row = $result->fetch_array();
+					if($row["build_name"] == " ")
+						echo "<td>".$row["build_name"]."</td>";
+					else
+						echo "<td>Add one!</td>";
+				}					
+			?>
+		</tr><tr>
+			<td>GPU</td>
+			<?php
+				for($x = 0; $x < mysqli_num_rows($result); $x++){
+					$row = $result->fetch_array();
+					if($row["build_name"] == " ")
+						echo "<td>".$row["build_name"]."</td>";
+					else
+						echo "<td>Add one!</td>";
+				}					
+			?>
+		</tr><tr>
+			<td>Case</td>
+			<?php
+				for($x = 0; $x < mysqli_num_rows($result); $x++){
+					$row = $result->fetch_array();
+					if($row["build_name"] == " ")
+						echo "<td>".$row["build_name"]."</td>";
+					else
+						echo "<td>Add one!</td>";
+				}					
+			?>
+		</tr>
+	</table>
 	
 </body>
 </html>
