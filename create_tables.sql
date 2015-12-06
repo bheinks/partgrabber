@@ -7,7 +7,8 @@ CREATE DATABASE partgrabber;
 USE partgrabber;
 
 CREATE TABLE `cpu` (
-  `comp_id` int(5) NOT NULL,
+  `comp_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  `name` varchar(32) NOT NULL,
   `manaufacturer` varchar(32) NOT NULL,
   `architecture` varchar(32) NOT NULL,
   `socket` varchar(32) NOT NULL,

@@ -54,47 +54,36 @@
 	</div>
 	
 	My Saved Builds!
-	<?php
-		// Query database for saved build and store in $result
-		$sql = "SELECT *
-				FROM saved_build
-				WHERE username='$username'";
-		$result = $conn->query($sql);		
-	?>
-	
+	<a href="createbuild.php">[Create a new build]</a>
+
 	<!--- Build up table of resulting saved builds --->
 	<table border>
-		
-		<!--- Output top header row of table (build names) --->
-		<tr>
-			<td></td>
-			<?php
-				while($row = $result->fetch_array())
-					echo "<td>".$row["build_name"]."</td>";
-			?>
-			<td></td>
-		</tr>
-		
-		<!--- Iteratively output a line of components --->
-		<!--- (one row for each component. one cell for each build) --->
 		<?php
-			for($y = 0; $y < count($component_array); $y++){
-				echo "<tr>";
+		
+			// Query database for saved build and store in $result
+			$sql = "SELECT *
+					FROM saved_build
+					WHERE username='$username'";
+			$result = $conn->query($sql);
+			
+			// Output header row of items in component_array[]
+			echo "<tr>";
+				echo "<td></td>";
+				for($y = 0; $y < count($component_array); $y++)
 					echo "<td>".$component_array[$y]."</td>";
-						for($x = 0; $x < mysqli_num_rows($result); $x++){
-							$row = $result->fetch_array();
-							if($row["build_name"] == " ")
-								echo "<td>".$row["build_name"]."</td>";
-							else
-								echo "<td>"."Add one!"."</td>";
-						}
-						
-				// One the last column, output an option to add a new build			
-				if($y == 0){
-					echo "<td rowspan='7'>";
-						echo "Add a new build!";
-					echo "</td>";
-				}
+			echo "</tr>";
+			
+			// Output each row of saved builds
+			for($y = 0; $y < mysqli_num_rows($result); $y++){
+				echo "<tr>";
+				$row = $result->fetch_array();
+				echo "<td>".$row["build_name"]."</td>";
+				for($x = 0; $x < count($component_array); $x++){
+						if($row[strtolower($component_array[$x])."_id"] != 0)
+							echo "<td>".$row[strtolower($component_array[$x])."_id"]."</td>";
+						else
+							echo "<td>Add One!</td>";
+					}
 				echo "</tr>";
 			}
 		?>
