@@ -71,7 +71,9 @@
 				echo "<td></td>";
 				for($y = 0; $y < count($component_array); $y++)
 					echo "<td>".$component_array[$y]."</td>";
+				echo "<td>Total Cost</td>";
 			echo "</tr>";
+			
 			
 			// Output each row of saved builds
 			for($y = 0; $y < mysqli_num_rows($result); $y++){
@@ -79,11 +81,21 @@
 				$row = $result->fetch_array();
 				echo "<td>".$row["build_name"]."</td>";
 				for($x = 0; $x < count($component_array); $x++){
-						if($row[strtolower($component_array[$x])."_id"] != 0)
-							echo "<td>".$row[strtolower($component_array[$x])."_id"]."</td>";
+						if($row[strtolower($component_array[$x])."_id"] != 0){
+							$sql = "SELECT *
+									FROM ".strtolower($component_array[$x])."
+									WHERE comp_id=".$row[strtolower($component_array[$x])."_id"];
+							$result2 = $conn->query($sql);
+							$row2 = $result2->fetch_array();
+							
+							echo "<td>".$row2["manufacturer"]."&nbsp;".$row2["name"]."</td>";
+							
+						}
+							
 						else
 							echo "<td>Add One!</td>";
 					}
+					echo "<td>$".$row["cost"]."</td>";
 				echo "</tr>";
 			}
 		?>
