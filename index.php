@@ -21,9 +21,14 @@
 </head>
 <body>
 	
+	<!--- Header --->
 	Welcome to PartGrabber!<br>
 	<br>
 	<br>
+	
+	<!--- Login area (aligned to top right corner) --->
+	<!--- Submits form POST data to loginredirect.php which --->
+	<!--- processes it, sets appropriate session variables and redirects back --->
 	<div style="position:absolute; top:0px; right:0px; border:1px solid gray;">
 		<form action="loginredirect.php" method="POST"><table>
 			<tr>
@@ -50,89 +55,50 @@
 	
 	My Saved Builds!
 	<?php
+		// Query database for saved build and store in $result
 		$sql = "SELECT *
 				FROM saved_build
 				WHERE username='$username'";
 		$result = $conn->query($sql);		
 	?>
+	
+	<!--- Build up table of resulting saved builds --->
 	<table border>
+		
+		<!--- Output top header row of table (build names) --->
 		<tr>
-			<td>[part]</td>
+			<td></td>
 			<?php
 				while($row = $result->fetch_array())
 					echo "<td>".$row["build_name"]."</td>";
 			?>
 			<td></td>
-		</tr><tr>
-			<td>CPU</td>
-			<?php
-				for($x = 0; $x < mysqli_num_rows($result); $x++){
-					$row = $result->fetch_array();
-					if($row["build_name"] == " ")
-						echo "<td>".$row["build_name"]."</td>";
-					else
-						echo "<td>Add one!</td>";
-				}					
-			?>
-			<td rowspan="6">
-				Add a new build!
-			</td>
-		</tr><tr>
-			<td>RAM</td>
-			<?php
-				for($x = 0; $x < mysqli_num_rows($result); $x++){
-					$row = $result->fetch_array();
-					if($row["build_name"] == " ")
-						echo "<td>".$row["build_name"]."</td>";
-					else
-						echo "<td>Add one!</td>";
-				}					
-			?>
-		</tr><tr>
-			<td>Motherboard</td>
-			<?php
-				for($x = 0; $x < mysqli_num_rows($result); $x++){
-					$row = $result->fetch_array();
-					if($row["build_name"] == " ")
-						echo "<td>".$row["build_name"]."</td>";
-					else
-						echo "<td>Add one!</td>";
-				}					
-			?>
-		</tr><tr>
-			<td>Storage</td>
-			<?php
-				for($x = 0; $x < mysqli_num_rows($result); $x++){
-					$row = $result->fetch_array();
-					if($row["build_name"] == " ")
-						echo "<td>".$row["build_name"]."</td>";
-					else
-						echo "<td>Add one!</td>";
-				}					
-			?>
-		</tr><tr>
-			<td>GPU</td>
-			<?php
-				for($x = 0; $x < mysqli_num_rows($result); $x++){
-					$row = $result->fetch_array();
-					if($row["build_name"] == " ")
-						echo "<td>".$row["build_name"]."</td>";
-					else
-						echo "<td>Add one!</td>";
-				}					
-			?>
-		</tr><tr>
-			<td>Case</td>
-			<?php
-				for($x = 0; $x < mysqli_num_rows($result); $x++){
-					$row = $result->fetch_array();
-					if($row["build_name"] == " ")
-						echo "<td>".$row["build_name"]."</td>";
-					else
-						echo "<td>Add one!</td>";
-				}					
-			?>
 		</tr>
+		
+		<!--- Iteratively output a line of components --->
+		<!--- (one row for each component. one cell for each build) --->
+		<?php
+			for($y = 0; $y < count($component_array); $y++){
+				echo "<tr>";
+					echo "<td>".$component_array[$y]."</td>";
+						for($x = 0; $x < mysqli_num_rows($result); $x++){
+							$row = $result->fetch_array();
+							if($row["build_name"] == " ")
+								echo "<td>".$row["build_name"]."</td>";
+							else
+								echo "<td>"."Add one!"."</td>";
+						}
+						
+				// One the last column, output an option to add a new build			
+				if($y == 0){
+					echo "<td rowspan='7'>";
+						echo "Add a new build!";
+					echo "</td>";
+				}
+				echo "</tr>";
+			}
+		?>
+		
 	</table>
 	
 </body>

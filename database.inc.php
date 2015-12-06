@@ -13,3 +13,5 @@
         echo "";
 
 ?>
+
+<?php $component_array = array("CPU", "GPU", "RAM", "Motherboard", "Storage", "Case", "PSU"); ?>
