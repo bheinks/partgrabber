@@ -79,7 +79,11 @@
 			for($y = 0; $y < mysqli_num_rows($result); $y++){
 				echo "<tr>";
 				$row = $result->fetch_array();
-				echo "<td>".$row["build_name"]."</td>";
+				echo "<td>";
+					echo "<b>".$row["build_name"]."</b><br>";
+					echo "<i>".$row["description"]."</i><br>";
+					echo "<a href='deletebuildredirect.php?build_name=".$row["build_name"]."'>Delete</a>";
+				echo "</td>";
 				for($x = 0; $x < count($component_array); $x++){
 						if($row[strtolower($component_array[$x])."_id"] != 0){
 							$sql = "SELECT *
