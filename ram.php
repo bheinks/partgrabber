@@ -15,31 +15,34 @@
 			$username = "";
 			$login_msg = $_SESSION['login_msg'];
 			$valid_login = false;
-		}	
+		}
+		
+		$build_name = $_GET["build_name"];	
 	?>
 	
 </head>
 <body>
 	
-	<a href="index.php">Back</a>
+	<a href="index.php">Back</a><br><br>	
+	
+	RAM<br><br>	
 	
 	<table border>
 		
-		<!--- Display all available CPUs --->
-		<tr>
-			<td colspan="6">CPUs</td>
-		</tr>
 		<?php
+			// Display all available CPUs
 			$sql = "SELECT *
-					FROM cpu";
+					FROM ram";
 			$result = $conn->query($sql);
 			while($row = $result->fetch_array()){
 				echo "<tr>";
 					echo "<td>".$row["manufacturer"]."</td>";
 					echo "<td>".$row["name"]."</td>";
-					echo "<td>".$row["capacity"]."</td>";
 					echo "<td>".$row["speed"]."</td>";
+					echo "<td>".$row["capacity"]."</td>";
 					echo "<td>";
+					
+						// Display all Retailers its available from
 						echo "<table border>";
 							$sql = "SELECT *
 									FROM sold_by
@@ -49,7 +52,11 @@
 								echo "<tr>";
 									echo "<td>".$row2["retail_name"]."</td>";
 									echo "<td>$".$row2["price"]."</td>";
-									echo "<td><a href='index.php'>Add to build</a></td>";
+									echo "<td><a href='addpartredirect.php?
+											build_name=".$build_name."&
+											comp_id=".$row2["sold_id"]."&
+											comp_type=ram
+											'>Add to build</a></td>";
 								echo "</tr>";
 							}
 						echo "</table>";
@@ -58,118 +65,7 @@
 			}
 		?>
 		
-		<!--- Display all available GPUs --->
-		<tr>
-			<td colspan="6">GPUs</td>
-		</tr>
-		<?php
-			$sql = "SELECT *
-					FROM gpu";
-			$result = $conn->query($sql);
-			while($row = $result->fetch_array()){
-				echo "<tr>";
-					echo "<td>".$row["manufacturer"]."</td>";
-					echo "<td>".$row["name"]."</td>";
-					echo "<td>".$row["clock_speed"]."</td>";
-					echo "<td>".$row["vram"]."</td>";
-					echo "<td><a href='index.php'>Add to build</a></td>";
-				echo "</tr>";
-			}
-		?>
 		
-		<!--- Display all available RAM --->
-		<tr>
-			<td colspan="6">RAM</td>
-		</tr>
-		<?php
-			$sql = "SELECT *
-					FROM ram";
-			$result = $conn->query($sql);
-			while($row = $result->fetch_array()){
-				echo "<tr>";
-					echo "<td>".$row["manufacturer"]."</td>";
-					echo "<td>".$row["name"]."</td>";
-					echo "<td>".$row["capacity"]."</td>";
-					echo "<td>".$row["speed"]."</td>";
-					echo "<td><a href='index.php'>Add to build</a></td>";
-				echo "</tr>";
-			}
-		?>
-		
-		<!--- Display all available Motherboards --->
-		<tr>
-			<td colspan="6">Motherboards</td>
-		</tr>
-		<?php
-			$sql = "SELECT *
-					FROM motherboard";
-			$result = $conn->query($sql);
-			while($row = $result->fetch_array()){
-				echo "<tr>";
-					echo "<td>".$row["manufacturer"]."</td>";
-					echo "<td>".$row["name"]."</td>";
-					echo "<td>".$row["form_factor"]."</td>";
-					echo "<td>".$row["socket"]."</td>";
-					echo "<td><a href='index.php'>Add to build</a></td>";
-				echo "</tr>";
-			}
-		?>
-		
-		<!--- Display all available Storage --->
-		<tr>
-			<td colspan="6">Storage Drives</td>
-		</tr>
-		<?php
-			$sql = "SELECT *
-					FROM storage";
-			$result = $conn->query($sql);
-			while($row = $result->fetch_array()){
-				echo "<tr>";
-					echo "<td>".$row["manufacturer"]."</td>";
-					echo "<td>".$row["name"]."</td>";
-					echo "<td>".$row["capacity"]."</td>";
-					echo "<td>".$row["type"]."</td>";
-					echo "<td><a href='index.php'>Add to build</a></td>";
-				echo "</tr>";
-			}
-		?>
-		
-		<!--- Display all available PSUs --->
-		<tr>
-			<td colspan="6">PSUs</td>
-		</tr>
-		<?php
-			$sql = "SELECT *
-					FROM psu";
-			$result = $conn->query($sql);
-			while($row = $result->fetch_array()){
-				echo "<tr>";
-					echo "<td>".$row["manufacturer"]."</td>";
-					echo "<td>".$row["name"]."</td>";
-					echo "<td>".$row["wattage"]."</td>";
-					echo "<td>".$row["form_factor"]."</td>";
-					echo "<td><a href='index.php'>Add to build</a></td>";
-				echo "</tr>";
-			}
-		?>
-		
-		<!--- Display all available Cases --->
-		<tr>
-			<td colspan="6">Cases</td>
-		</tr>
-		<?php
-			$sql = "SELECT *
-					FROM comp_case";
-			$result = $conn->query($sql);
-			while($row = $result->fetch_array()){
-				echo "<tr>";
-					echo "<td>".$row["manufacturer"]."</td>";
-					echo "<td>".$row["name"]."</td>";
-					echo "<td>".$row["form_factor"]."</td>";
-					echo "<td><a href='index.php'>Add to build</a></td>";
-				echo "</tr>";
-			}
-		?>
 	
 	</table>
 </body>

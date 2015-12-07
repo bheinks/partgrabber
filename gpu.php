@@ -16,6 +16,8 @@
 			$login_msg = $_SESSION['login_msg'];
 			$valid_login = false;
 		}	
+		
+		$build_name = $_GET["build_name"];	
 	?>
 	
 </head>
@@ -50,7 +52,11 @@
 								echo "<tr>";
 									echo "<td>".$row2["retail_name"]."</td>";
 									echo "<td>$".$row2["price"]."</td>";
-									echo "<td><a href='index.php'>Add to build</a></td>";
+									echo "<td><a href='addpartredirect.php?
+											build_name=".$build_name."&
+											comp_id=".$row2["sold_id"]."&
+											comp_type=gpu
+											'>Add to build</a></td>";
 								echo "</tr>";
 							}
 						echo "</table>";
