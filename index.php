@@ -83,17 +83,20 @@
 				for($x = 0; $x < count($component_array); $x++){
 						if($row[strtolower($component_array[$x])."_id"] != 0){
 							$sql = "SELECT *
-									FROM ".strtolower($component_array[$x])."
-									WHERE comp_id=".$row[strtolower($component_array[$x])."_id"];
+									FROM   sold_by a, ".strtolower($component_array[$x])." b
+									WHERE  a.sold_id = ".$row[strtolower($component_array[$x])."_id"]."
+									  AND  b.comp_id = a.comp_id";
 							$result2 = $conn->query($sql);
 							$row2 = $result2->fetch_array();
 							
-							echo "<td>".$row2["manufacturer"]."&nbsp;".$row2["name"]."</td>";
-							
+							echo "<td>".$row2["manufacturer"]."&nbsp;".$row2["name"]."&nbsp;(".$row2["retail_name"].")<br>
+								 $".$row2["price"]."<br>
+								 <a href='".strtolower($component_array[$x]).".php?build_name=".$row["build_name"]."'>Change this!</a></td>";
 						}
 							
 						else
-							echo "<td>Add One!</td>";
+							echo "<td><a href='".strtolower($component_array[$x]).".php?build_name=".$row["build_name"]."'>Add One!</a></td>";
+							
 					}
 					echo "<td>$".$row["cost"]."</td>";
 				echo "</tr>";

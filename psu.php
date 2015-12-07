@@ -31,14 +31,14 @@
 		</tr>
 		<?php
 			$sql = "SELECT *
-					FROM cpu";
+					FROM psu";
 			$result = $conn->query($sql);
 			while($row = $result->fetch_array()){
 				echo "<tr>";
 					echo "<td>".$row["manufacturer"]."</td>";
 					echo "<td>".$row["name"]."</td>";
-					echo "<td>".$row["architecture"]."</td>";
-					echo "<td>".$row["socket"]."</td>";
+					echo "<td>".$row["wattage"]."</td>";
+					echo "<td>".$row["form_factor"]."</td>";
 					echo "<td>";
 						echo "<table border>";
 							$sql = "SELECT *

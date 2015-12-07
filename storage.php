@@ -37,8 +37,8 @@
 				echo "<tr>";
 					echo "<td>".$row["manufacturer"]."</td>";
 					echo "<td>".$row["name"]."</td>";
-					echo "<td>".$row["architecture"]."</td>";
-					echo "<td>".$row["socket"]."</td>";
+					echo "<td>".$row["capacity"]."</td>";
+					echo "<td>".$row["type"]."</td>";
 					echo "<td>";
 						echo "<table border>";
 							$sql = "SELECT *

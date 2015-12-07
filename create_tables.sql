@@ -88,10 +88,11 @@ CREATE TABLE `saved_build` (
 );
 
 CREATE TABLE `sold_by` (
+  `sold_id` int(5) NOT NULL AUTO_INCREMENT,
   `retail_name` varchar(32) NOT NULL,
   `comp_id` int(5) NOT NULL,
-  `price` float(3,2) NOT NULL,
-  PRIMARY KEY (`retail_name`, `price`)
+  `price` float(6,2) NOT NULL,
+  PRIMARY KEY (`sold_id`)
 );
 
 CREATE TABLE `storage` (
