@@ -115,7 +115,9 @@
 				if((isset($_SESSION["compatibility"])) && ($_SESSION["compatibility"] != "")){
 					if($_SESSION["compatibility_build"] == $row["build_name"]){
 						echo "<tr style='text-align:center;'>";
-							echo "<td colspan='9'>".$_SESSION["compatibility"]."</td>";
+							echo "<td colspan='9'>";
+								echo $_SESSION["compatibility"];
+							echo "</td>";
 						echo "</tr>";
 					}
 				}

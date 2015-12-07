@@ -52,7 +52,6 @@ CREATE TABLE `psu` (
   `comp_id` int(5) NOT NULL AUTO_INCREMENT,
   `manufacturer` varchar(32) NOT NULL,
   `wattage` varchar(32) NOT NULL,
-  `form_factor` varchar(32) NOT NULL,
   PRIMARY KEY (`comp_id`)
 );
 

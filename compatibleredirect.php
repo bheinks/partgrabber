@@ -24,7 +24,7 @@
 	;";
 	$result = $conn->query($sql);
 	$row = $result->fetch_array();
-	$motherboard_socket = $row["socket"];
+	$motherboard = $row["socket"];
 	
 	$sql = "SELECT 	socket
 			FROM 	cpu
@@ -41,14 +41,53 @@
 	;";
 	$result = $conn->query($sql);
 	$row = $result->fetch_array();
-	$cpu_socket = $row["socket"];
+	$cpu = $row["socket"];
 	
-	echo $cpu_socket."<br>".$motherboard_socket;
-	
-	if(($motherboard_socket != $cpu_socket) && ($motherboard_socket != "") && ($cpu_socket != ""))
+	// Set message if incompatible
+	if(($motherboard != $cpu) && ($motherboard != "") && ($cpu != ""))
 		$compatibility = $compatibility."Socket Mismatch!";
-
+		
+		
+	// Check for form factor compatibility
+	$sql = "SELECT 	form_factor
+			FROM 	motherboard
+			WHERE	comp_id = (
+				SELECT 	comp_id
+				FROM	sold_by 
+				WHERE	sold_id = (
+					SELECT 	motherboard_id
+					FROM 	saved_build
+					WHERE 	build_name = '".$build_name."'
+					AND 	username = '".$username."'
+				)
+			)
+	;";
+	$result = $conn->query($sql);
+	$row = $result->fetch_array();
+	$motherboard = $row["form_factor"];
 	
+	$sql = "SELECT 	form_factor
+			FROM 	comp_case
+			WHERE	comp_id = (
+				SELECT 	comp_id
+				FROM	sold_by 
+				WHERE	sold_id = (
+					SELECT 	case_id
+					FROM 	saved_build
+					WHERE 	build_name = '".$build_name."'
+					AND 	username = '".$username."'
+				)
+			)
+	;";
+	$result = $conn->query($sql);
+	$row = $result->fetch_array();
+	$case = $row["form_factor"];
+	
+	// Set message if incompatible
+	if(($motherboard != $case) && ($motherboard != "") && ($case != ""))
+		$compatibility = $compatibility."Form Factor Mismatch!";
+
+	// Set SESSION variables
 	$_SESSION["compatibility"] = $compatibility;
 	$_SESSION["compatibility_build"] = $build_name;
 	
