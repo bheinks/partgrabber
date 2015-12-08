@@ -69,7 +69,7 @@ class ram(component):
 class storage(component):
     def __init__(self, *args):
         super().__init__(*args)
-        self.sql_specs["capacity"] = self.specs["Capactiy"]
+        self.sql_specs["capacity"] = self.specs["Capacity"]
         self.sql_specs["type"] = "SSD" if self.specs["Cache"] == "N/A" else "HDD"
 
 def main(comp_type, html_file):
@@ -77,16 +77,11 @@ def main(comp_type, html_file):
         soup = BeautifulSoup(html, "html.parser")
 
     parts = []
-    i = 0
 
     for name in soup.find_all("td", "tdname"):
         url = name.a.get("href")
         comp_id = url.split('/')[-1]
         parts.append(grab_part(comp_type, comp_id, url))
-        i += 1
-
-        if i == 5:
-            break
 
     write_sql(comp_type, parts)
 
@@ -108,11 +103,11 @@ def write_sql(comp_type, parts):
         for i, part in enumerate(parts):
             j = 0
             for retailer, price in part.prices.items():
-                j += 1
-                if i == len(parts) - 1 and j == len(part.prices.items()):
+                if i == len(parts) - 1 and j == len(part.prices.items()) - 1:
                     end = ';\n\n'
 
                 print("('{}-{}', '{}', '{}', {})".format(retailer, part.comp_id, RETAILERS[retailer], part.comp_id, price), end = end, file = sql_file)
+                j += 1
 
 def grab_part(comp_type, comp_id, url):
     response = urllib.request.urlopen(url)
