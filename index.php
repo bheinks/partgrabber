@@ -87,7 +87,7 @@
 					echo "<b>".$row["build_name"]."</b><br>";
 					echo "<i>".$row["description"]."</i><br>";
 					echo "<a href='deletebuildredirect.php?build_name=".$row["build_name"]."'>Delete</a><br>";
-					echo "<a href='compatibleredirect.php?build_name=".$row["build_name"]."'>Check Compatibility</a>";
+					echo "<a href='compatibleredirect.php?build_name=".$row["build_name"]."'>Compatibility</a>";
 				echo "</td>";
 				for($x = 0; $x < count($component_array); $x++){
 						if($row[strtolower($component_array[$x])."_id"] != "0"){
@@ -101,7 +101,7 @@
 							$result2 = $conn->query($sql);
 							$row2 = $result2->fetch_array();
 							
-							echo "<td>".$row2["manufacturer"]."&nbsp;".$row2["name"]."<br>
+							echo "<td style='text-align: center; vertical-align: bottom;'>".$row2["manufacturer"]."&nbsp;".$row2["name"]."<br><br>
 								 $".$row2["price"]."&nbsp;(".$row2["retail_name"].")<br>
 								 <a href='".strtolower($component_array[$x]).".php?build_name=".$row["build_name"]."'>Change this!</a></td>";
 						}
