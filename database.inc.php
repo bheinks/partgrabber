@@ -15,3 +15,12 @@
 ?>
 
 <?php $component_array = array("CPU", "GPU", "RAM", "Motherboard", "Storage", "Case", "PSU"); ?>
+
+<style>
+    body{
+        background-image: url("circuit.jpg");
+    }
+    table{
+        background-color: white;
+    }
+</style>

@@ -27,7 +27,7 @@
 	<!--- Login area (aligned to top right corner) --->
 	<!--- Submits form POST data to loginredirect.php which --->
 	<!--- processes it, sets appropriate session variables and redirects back --->
-	<div style="position:absolute; top:0px; right:0px; border:1px solid gray;">
+	<div style="position:absolute; top:0px; right:0px; border:1px solid gray; background-color: white;">
 		<form action="loginredirect.php" method="POST"><table>
 			<tr>
 				<td align="center" colspan="2"">
