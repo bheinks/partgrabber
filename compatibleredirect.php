@@ -45,7 +45,7 @@
 	
 	// Set message if incompatible
 	if(($motherboard != $cpu) && ($motherboard != "") && ($cpu != ""))
-		$compatibility = $compatibility."Socket Mismatch!";
+		$compatibility = $compatibility."Socket Mismatch!&nbsp;";
 		
 		
 	// Check for form factor compatibility
@@ -85,7 +85,7 @@
 	
 	// Set message if incompatible
 	if(($motherboard != $case) && ($motherboard != "") && ($case != ""))
-		$compatibility = $compatibility."Form Factor Mismatch!";
+		$compatibility = $compatibility."Form Factor Mismatch!&nbsp;";
 
 	// Set SESSION variables
 	$_SESSION["compatibility"] = $compatibility;

@@ -12,6 +12,7 @@
 	$sql = "UPDATE	saved_build
 			SET		".$comp_type."_id = '".$comp_id."'
 			WHERE 	build_name = '".$build_name."'";
+	echo $sql;
 	$conn->query($sql);
 	
 	// Calculate new total cost

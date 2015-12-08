@@ -46,7 +46,7 @@
 						echo "<table border>";
 							$sql = "SELECT *
 									FROM sold_by
-									WHERE comp_id = ".$row["comp_id"];
+									WHERE comp_id = '".$row["comp_id"]."';";
 							$result2 = $conn->query($sql);
 							while($row2 = $result2->fetch_array()){
 								echo "<tr>";
