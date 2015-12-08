@@ -30,8 +30,9 @@
 	<div style="position:absolute; top:0px; right:0px; border:1px solid gray;">
 		<form action="loginredirect.php" method="POST"><table>
 			<tr>
-				<td align="center" colspan="2" style="font-weight: bold;">
-					Please log in
+				<td align="center" colspan="2"">
+					<b>Log In: </b><br>
+					<font size="2">(or create account)</font>
 				</td>
 			</tr><tr>
 				<td>Username:</td>

@@ -9,7 +9,7 @@ CREATE DATABASE partgrabber;
 USE partgrabber;
 
 CREATE TABLE `comp_case` (
-  `comp_id` varchar(60) NOT NULL,
+  `comp_id` varchar(100) NOT NULL,
   `name` varchar(32) NOT NULL,
   `manufacturer` varchar(32) NOT NULL,
   `form_factor` varchar(32) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE `comp_case` (
 );
 
 CREATE TABLE `cpu` (
-  `comp_id` varchar(60) NOT NULL,
+  `comp_id` varchar(100) NOT NULL,
   `name` varchar(32) NOT NULL,
   `manufacturer` varchar(32) NOT NULL,
   `architecture` varchar(32) NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE `cpu` (
 );
 
 CREATE TABLE `gpu` (
-  `comp_id` varchar(60) NOT NULL,
+  `comp_id` varchar(100) NOT NULL,
   `name` varchar(32) NOT NULL,
   `manufacturer` varchar(32) NOT NULL,
   `clock_speed` varchar(32) NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE `manufacturer` (
 );
 
 CREATE TABLE `motherboard` (
-  `comp_id` varchar(60) NOT NULL,
+  `comp_id` varchar(100) NOT NULL,
   `name` varchar(32) NOT NULL,
   `manufacturer` varchar(32) NOT NULL,
   `form_factor` varchar(32) NOT NULL,
@@ -51,14 +51,14 @@ CREATE TABLE `motherboard` (
 );
 
 CREATE TABLE `psu` (
-  `comp_id` varchar(60) NOT NULL,
+  `comp_id` varchar(100) NOT NULL,
   `manufacturer` varchar(32) NOT NULL,
   `wattage` varchar(32) NOT NULL,
   PRIMARY KEY (`comp_id`)
 );
 
 CREATE TABLE `ram` (
-  `comp_id` varchar(60) NOT NULL,
+  `comp_id` varchar(100) NOT NULL,
   `name` varchar(32) NOT NULL,
   `manufacturer` varchar(32) NOT NULL,
   `capacity` varchar(32) NOT NULL,
@@ -89,15 +89,15 @@ CREATE TABLE `saved_build` (
 );
 
 CREATE TABLE `sold_by` (
-  `sold_id` int(5) NOT NULL AUTO_INCREMENT,
+  `sold_id` varchar(100) NOT NULL AUTO_INCREMENT,
   `retail_name` varchar(32) NOT NULL,
-  `comp_id` varchar(60) NOT NULL,
+  `comp_id` varchar(100) NOT NULL,
   `price` float(6,2) NOT NULL,
   PRIMARY KEY (`sold_id`)
 );
 
 CREATE TABLE `storage` (
-  `comp_id` varchar(60) NOT NULL,
+  `comp_id` varchar(100) NOT NULL,
   `name` varchar(32) NOT NULL,
   `manufacturer` varchar(32) NOT NULL,
   `capacity` varchar(32) NOT NULL,

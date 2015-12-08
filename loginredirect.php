@@ -34,8 +34,14 @@
 		}
 		
 		// If no results found, invalid username
-		else
-			$_SESSION['login_msg'] = "Username not found!";			
+		else{
+			$sql = "INSERT INTO user VALUES
+						('".$username_given."','".$password_given."');";
+				   echo $sql;
+			$conn->query($sql);	
+			$_SESSION['login_msg'] = "Created new user ".$username_given;
+			
+		}			
 	}	
 	
 	// Redirect back to index.php
