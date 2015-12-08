@@ -23,11 +23,11 @@
 </head>
 <body>
 	
-	<a href="index.php">Back</a><br><br>	
+	<a href="index.php">Back</a>	
+
+	<p style="font-weight: bold; font-size: 22px; text-align: center;">CPUs</p>	
 	
-	CPUs<br><br>	
-	
-	<table border>
+	<table border  align="center">
 		
 		<?php
 			// Display all available CPUs

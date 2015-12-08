@@ -22,9 +22,7 @@
 <body>
 	
 	<!--- Header --->
-	Welcome to PartGrabber!<br>
-	<br>
-	<br>
+	<p style="font-weight: bold; font-size: 22px; text-align: center;"><br>Welcome to PartGrabber!<br><br></p>
 	
 	<!--- Login area (aligned to top right corner) --->
 	<!--- Submits form POST data to loginredirect.php which --->
@@ -40,7 +38,7 @@
 				<td><input type="test" name="username"></td>
 			</tr><tr>
 				<td>Password:</td>
-				<td><input type="test" name="password"></td>
+				<td><input type="password" name="password"></td>
 			</tr><tr>
 				<td align="center" colspan="2">
 					<?=$login_msg?>
@@ -53,8 +51,8 @@
 		</table></form>
 	</div>
 	
-	My Saved Builds!
-	<a href="createbuild.php">[Create a new build]</a>
+	<p style="text-align: center;"><b>My Saved Builds!<br></b>
+	<a href="createbuild.php">[Create a new build]</a></p>
 	
 	<?php
 	
@@ -62,7 +60,7 @@
 	?>
 
 	<!--- Build up table of resulting saved builds --->
-	<table border>
+	<table border align="center">
 		<?php
 		
 			// Query database for saved build and store in $result

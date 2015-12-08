@@ -23,12 +23,10 @@
 	
 	<a href="index.php">Back</a><br><br>
 	
-	<form action="createbuildredirect.php" method="GET"><table>
+	<p style="font-weight: bold; font-size: 22px; text-align: center;">Create a new build</p>
+	
+	<form action="createbuildredirect.php" method="GET"><table align="center">
 			<tr>
-				<td align="center" colspan="2" style="font-weight: bold;">
-					Create a new build
-				</td>
-			</tr><tr>
 				<td>Build Name:</td>
 				<td><input type="test" name="build_name"></td>
 			</tr><tr>

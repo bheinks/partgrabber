@@ -23,11 +23,11 @@
 </head>
 <body>
 	
-	<a href="index.php">Back</a><br><br>	
+	<a href="index.php">Back</a>
 	
-	Storage Drives<br><br>	
+	<p style="font-weight: bold; font-size: 22px; text-align: center;">Storage Drives</p>	
 	
-	<table border>
+	<table border align="center">
 		
 		<?php
 			// Display all available CPUs
