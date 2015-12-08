@@ -221,31 +221,31 @@ INSERT INTO `sold_by` (`sold_id`, `retail_name`, `comp_id`, `price`) VALUES
 
 -- Insert comp_case components and prices
 INSERT INTO `comp_case` (`comp_id`, `name`, `manufacturer`, `form_factor`) VALUES
-('nzxt-case-caph410w1', 'NZXT Phantom 410 (White) ATX Mid Tower Case', 'NZXT', 'ATX Mid Tower'),
-('corsair-case-cc9011075ww', 'Corsair 100R ATX Mid Tower Case', 'Corsair', 'ATX Mid Tower'),
-('thermaltake-case-ca1b200m1wn00', 'Thermaltake Versa H21 Window ATX Mid Tower Case', 'Thermaltake', 'ATX Mid Tower'),
-('nzxt-case-cas21w2b1', 'NZXT Source 210 Window ATX Mid Tower Case', 'NZXT', 'ATX Mid Tower'),
-('thermaltake-case-ca1c200m1wn00', 'Thermaltake Versa H25 ATX Mid Tower Case', 'Thermaltake', 'ATX Mid Tower');
+('nzxt-case-caph410w1', 'NZXT Phantom 410 (White) ATX Mid Tower Case', 'NZXT', 'ATX'),
+('corsair-case-cc9011075ww', 'Corsair 100R ATX Mid Tower Case', 'Corsair', 'ATX'),
+('thermaltake-case-ca1b200m1wn00', 'Thermaltake Versa H21 Window ATX Mid Tower Case', 'Thermaltake', 'ATX'),
+('nzxt-case-cas21w2b1', 'NZXT Source 210 Window ATX Mid Tower Case', 'NZXT', 'ATX'),
+('thermaltake-case-ca1c200m1wn00', 'Thermaltake Versa H25 ATX Mid Tower Case', 'Thermaltake', 'ATX');
 
 INSERT INTO `sold_by` (`sold_id`, `retail_name`, `comp_id`, `price`) VALUES
-('superbiiz-nzxt-case-caph410w1', 'SuperBiiz', 'nzxt-case-caph410w1', 85.99),
-('nzxt-nzxt-case-caph410w1', 'NZXT', 'nzxt-case-caph410w1', 99.99),
-('bestbuy-nzxt-case-caph410w1', 'Best Buy', 'nzxt-case-caph410w1', 99.99),
-('ncixus-nzxt-case-caph410w1', 'NCIX US', 'nzxt-case-caph410w1', 129.99),
 ('bhphotovideo-nzxt-case-caph410w1', 'B&H Photo Video', 'nzxt-case-caph410w1', 89.99),
 ('amazon-nzxt-case-caph410w1', 'Amazon', 'nzxt-case-caph410w1', 89.99),
 ('newegg-nzxt-case-caph410w1', 'Newegg', 'nzxt-case-caph410w1', 89.99),
-('amazon-corsair-case-cc9011075ww', 'Amazon', 'corsair-case-cc9011075ww', 48.99),
+('superbiiz-nzxt-case-caph410w1', 'SuperBiiz', 'nzxt-case-caph410w1', 85.99),
+('bestbuy-nzxt-case-caph410w1', 'Best Buy', 'nzxt-case-caph410w1', 99.99),
+('nzxt-nzxt-case-caph410w1', 'NZXT', 'nzxt-case-caph410w1', 99.99),
+('ncixus-nzxt-case-caph410w1', 'NCIX US', 'nzxt-case-caph410w1', 129.99),
 ('microcenter-corsair-case-cc9011075ww', 'Micro Center', 'corsair-case-cc9011075ww', 37.99),
-('newegg-corsair-case-cc9011075ww', 'Newegg', 'corsair-case-cc9011075ww', 48.99),
-('bhphotovideo-corsair-case-cc9011075ww', 'B&H Photo Video', 'corsair-case-cc9011075ww', 59.58),
 ('ncixus-corsair-case-cc9011075ww', 'NCIX US', 'corsair-case-cc9011075ww', 49.99),
-('superbiiz-thermaltake-case-ca1b200m1wn00', 'SuperBiiz', 'thermaltake-case-ca1b200m1wn00', 42.99),
-('amazon-thermaltake-case-ca1b200m1wn00', 'Amazon', 'thermaltake-case-ca1b200m1wn00', 49.99),
+('newegg-corsair-case-cc9011075ww', 'Newegg', 'corsair-case-cc9011075ww', 48.99),
+('amazon-corsair-case-cc9011075ww', 'Amazon', 'corsair-case-cc9011075ww', 48.99),
+('bhphotovideo-corsair-case-cc9011075ww', 'B&H Photo Video', 'corsair-case-cc9011075ww', 59.58),
 ('directron-thermaltake-case-ca1b200m1wn00', 'Directron', 'thermaltake-case-ca1b200m1wn00', 42.99),
+('amazon-thermaltake-case-ca1b200m1wn00', 'Amazon', 'thermaltake-case-ca1b200m1wn00', 49.99),
 ('newegg-thermaltake-case-ca1b200m1wn00', 'Newegg', 'thermaltake-case-ca1b200m1wn00', 24.99),
+('superbiiz-thermaltake-case-ca1b200m1wn00', 'SuperBiiz', 'thermaltake-case-ca1b200m1wn00', 42.99),
 ('newegg-nzxt-case-cas21w2b1', 'Newegg', 'nzxt-case-cas21w2b1', 31.99),
-('superbiiz-thermaltake-case-ca1c200m1wn00', 'SuperBiiz', 'thermaltake-case-ca1c200m1wn00', 47.99),
 ('amazon-thermaltake-case-ca1c200m1wn00', 'Amazon', 'thermaltake-case-ca1c200m1wn00', 56.97),
-('newegg-thermaltake-case-ca1c200m1wn00', 'Newegg', 'thermaltake-case-ca1c200m1wn00', 39.98);
+('newegg-thermaltake-case-ca1c200m1wn00', 'Newegg', 'thermaltake-case-ca1c200m1wn00', 39.98),
+('superbiiz-thermaltake-case-ca1c200m1wn00', 'SuperBiiz', 'thermaltake-case-ca1c200m1wn00', 47.99);
 

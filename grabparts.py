@@ -30,47 +30,47 @@ class component:
         self.sql_specs = OrderedDict()
         self.sql_specs["comp_id"] = comp_id
         self.sql_specs["name"] = name
-        self.sql_specs["manufacturer"] = specs[0]
+        self.sql_specs["manufacturer"] = specs["Manufacturer"]
 
 class comp_case(component):
     def __init__(self, *args):
         super().__init__(*args)
-        self.sql_specs["form_factor"] = self.specs[3]
+        self.sql_specs["form_factor"] = self.specs["Motherboard Compatibility"].split(", ")[0]
 
 class cpu(component):
     def __init__(self, *args):
         super().__init__(*args)
-        self.sql_specs["architecture"] = self.specs[3]
-        self.sql_specs["socket"] = self.specs[4]
+        self.sql_specs["architecture"] = self.specs["Data Width"]
+        self.sql_specs["socket"] = self.specs["Socket"]
 
 class gpu(component):
     def __init__(self, *args):
         super().__init__(*args)
-        self.sql_specs["clock_speed"] = self.specs[6]
-        self.sql_specs["vram"] = self.specs[4]
+        self.sql_specs["clock_speed"] = self.specs["Core Clock"]
+        self.sql_specs["vram"] = self.specs["Memory Size"]
 
 class motherboard(component):
     def __init__(self, *args):
         super().__init__(*args)
-        self.sql_specs["form_factor"] = self.specs[2]
-        self.sql_specs["socket"] = self.specs[3]
+        self.sql_specs["form_factor"] = self.specs["Form Factor"]
+        self.sql_specs["socket"] = self.specs["CPU Socket"]
 
 class psu(component):
     def __init__(self, *args):
         super().__init__(*args)
-        self.sql_specs["wattage"] = self.specs[3]
+        self.sql_specs["wattage"] = self.specs["Wattage"]
 
 class ram(component):
     def __init__(self, *args):
         super().__init__(*args)
-        self.sql_specs["capacity"] = self.specs[4]
-        self.sql_specs["speed"] = self.specs[3]
+        self.sql_specs["capacity"] = self.specs["Size"]
+        self.sql_specs["speed"] = self.specs["Speed"]
 
 class storage(component):
     def __init__(self, *args):
         super().__init__(*args)
-        self.sql_specs["capacity"] = self.specs[2]
-        self.sql_specs["type"] = "SSD" if self.specs[4] == "N/A" else "HDD"
+        self.sql_specs["capacity"] = self.specs["Capactiy"]
+        self.sql_specs["type"] = "SSD" if self.specs["Cache"] == "N/A" else "HDD"
 
 def main(comp_type, html_file):
     with open(html_file) as html:
@@ -120,7 +120,7 @@ def grab_part(comp_type, comp_id, url):
 
     name = soup.find("h1", "name").string
     specs_block = soup.find("div", "specs block").find_all("h4")
-    specs = [i.next_sibling.strip() for i in specs_block]
+    specs = {i.string: i.next_sibling.strip() for i in specs_block}
 
     prices_block = soup.find("div", "prices block")
     merchants = [i.parent.get("class")[0] for i in prices_block.find_all("td", "merchant")]
