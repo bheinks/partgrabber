@@ -39,14 +39,13 @@
 					echo "<td>".$row["manufacturer"]."</td>";
 					echo "<td>".$row["name"]."</td>";
 					echo "<td>".$row["wattage"]."</td>";
-					echo "<td>".$row["form_factor"]."</td>";
 					echo "<td>";
 					
 						// Display all Retailers its available from
 						echo "<table border>";
 							$sql = "SELECT *
 									FROM sold_by
-									WHERE comp_id = ".$row["comp_id"];
+									WHERE comp_id = '".$row["comp_id"]."';";
 							$result2 = $conn->query($sql);
 							while($row2 = $result2->fetch_array()){
 								echo "<tr>";

@@ -90,10 +90,13 @@
 					echo "<a href='compatibleredirect.php?build_name=".$row["build_name"]."'>Check Compatibility</a>";
 				echo "</td>";
 				for($x = 0; $x < count($component_array); $x++){
-						if($row[strtolower($component_array[$x])."_id"] != 0){
+						if($row[strtolower($component_array[$x])."_id"] != "0"){
+							$temp = strtolower($component_array[$x]);
+							if($temp == "case")
+								$temp = "comp_case";
 							$sql = "SELECT *
-									FROM   sold_by a, ".strtolower($component_array[$x])." b
-									WHERE  a.sold_id = ".$row[strtolower($component_array[$x])."_id"]."
+									FROM   sold_by a, ".$temp." b
+									WHERE  a.sold_id = '".$row[strtolower($component_array[$x])."_id"]."'
 									  AND  b.comp_id = a.comp_id";
 							$result2 = $conn->query($sql);
 							$row2 = $result2->fetch_array();
