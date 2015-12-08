@@ -1,13 +1,31 @@
 import urllib.request
 from bs4 import BeautifulSoup
 from collections import OrderedDict
-from pprint import pprint
 from sys import argv
+
+RETAILERS = {
+    "microcenter": "Micro Center",
+    "directron": "Directron",
+    "outletpc": "OutletPC",
+    "ncixus": "NCIX US",
+    "bhphotovideo": "B&H Photo Video",
+    "bestbuy": "Best Buy",
+    "newegg": "Newegg",
+    "superbiiz": "SuperBiiz",
+    "amazon": "Amazon",
+    "macmall": "MacMall",
+    "pcmall": "PC Mall",
+    "adorama": "Adorama",
+    "dellbusiness": "Dell Business",
+    "otherworldcomputing": "Other World Computing",
+    "nzxt": "NZXT"
+}
 
 class component:
     def __init__(self, comp_id, specs, name, prices):
         self.specs = specs
         self.prices = prices
+        self.comp_id = comp_id
 
         self.sql_specs = OrderedDict()
         self.sql_specs["comp_id"] = comp_id
@@ -17,7 +35,7 @@ class component:
 class comp_case(component):
     def __init__(self, *args):
         super().__init__(*args)
-        self.sql_specs["form_factor"] = self.specs[2]
+        self.sql_specs["form_factor"] = self.specs[3]
 
 class cpu(component):
     def __init__(self, *args):
@@ -74,11 +92,27 @@ def main(comp_type, html_file):
 
 def write_sql(comp_type, parts):
     with open("add_parts.sql", 'a') as sql_file:
-        print("INSERT INTO `{}` (`{}`) VALUES".format(comp_type, "`, `".join(parts[0].sql_specs.keys())))
-        
-        for part in parts:
-            print("('{}')".format("', '".join(part.sql_specs.values())))
+        print("-- Insert {} components and prices".format(comp_type), file = sql_file)
+        print("INSERT INTO `{}` (`{}`) VALUES".format(comp_type, "`, `".join(parts[0].sql_specs.keys())), file = sql_file)
 
+        end = ',\n'
+        for i, part in enumerate(parts):
+            if i == len(parts) - 1:
+                end = ';\n\n'
+
+            print("('{}')".format("', '".join(part.sql_specs.values())), end = end, file = sql_file)
+
+        print("INSERT INTO `sold_by` (`sold_id`, `retail_name`, `comp_id`, `price`) VALUES", file = sql_file)
+
+        end = ',\n'
+        for i, part in enumerate(parts):
+            j = 0
+            for retailer, price in part.prices.items():
+                j += 1
+                if i == len(parts) - 1 and j == len(part.prices.items()):
+                    end = ';\n\n'
+
+                print("('{}-{}', '{}', '{}', {})".format(retailer, part.comp_id, RETAILERS[retailer], part.comp_id, price), end = end, file = sql_file)
 
 def grab_part(comp_type, comp_id, url):
     response = urllib.request.urlopen(url)
@@ -90,7 +124,7 @@ def grab_part(comp_type, comp_id, url):
 
     prices_block = soup.find("div", "prices block")
     merchants = [i.parent.get("class")[0] for i in prices_block.find_all("td", "merchant")]
-    prices = dict(zip(merchants, [i.a.contents[0] for i in prices_block.find_all("td", "total")]))
+    prices = dict(zip(merchants, [i.a.contents[0][1:] for i in prices_block.find_all("td", "total")]))
 
     part = globals()[comp_type](comp_id, specs, name, prices)
 

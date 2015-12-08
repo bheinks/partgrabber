@@ -1,0 +1,251 @@
+-- Insert cpu components and prices
+INSERT INTO `cpu` (`comp_id`, `name`, `manufacturer`, `architecture`, `socket`) VALUES
+('intel-cpu-bx80646i54690k', 'Intel Core i5-4690K 3.5GHz Quad-Core Processor', 'Intel', '64-bit', 'LGA1150'),
+('intel-cpu-bx80646i74790k', 'Intel Core i7-4790K 4.0GHz Quad-Core Processor', 'Intel', '64-bit', 'LGA1150'),
+('intel-cpu-bx80662i76700k', 'Intel Core i7-6700K 4.0GHz Quad-Core Processor', 'Intel', '64-bit', 'LGA1151'),
+('intel-cpu-bx80662i56600k', 'Intel Core i5-6600K 3.5GHz Quad-Core Processor', 'Intel', '64-bit', 'LGA1151'),
+('intel-cpu-bx80646i54460', 'Intel Core i5-4460 3.2GHz Quad-Core Processor', 'Intel', '64-bit', 'LGA1150');
+
+INSERT INTO `sold_by` (`sold_id`, `retail_name`, `comp_id`, `price`) VALUES
+('directron-intel-cpu-bx80646i54690k', 'Directron', 'intel-cpu-bx80646i54690k', 238.95),
+('outletpc-intel-cpu-bx80646i54690k', 'OutletPC', 'intel-cpu-bx80646i54690k', 238.77),
+('bhphotovideo-intel-cpu-bx80646i54690k', 'B&H Photo Video', 'intel-cpu-bx80646i54690k', 237.95),
+('microcenter-intel-cpu-bx80646i54690k', 'Micro Center', 'intel-cpu-bx80646i54690k', 179.99),
+('ncixus-intel-cpu-bx80646i54690k', 'NCIX US', 'intel-cpu-bx80646i54690k', 237.99),
+('bestbuy-intel-cpu-bx80646i54690k', 'Best Buy', 'intel-cpu-bx80646i54690k', 239.99),
+('superbiiz-intel-cpu-bx80646i54690k', 'SuperBiiz', 'intel-cpu-bx80646i54690k', 219.99),
+('newegg-intel-cpu-bx80646i54690k', 'Newegg', 'intel-cpu-bx80646i54690k', 241.98),
+('outletpc-intel-cpu-bx80646i74790k', 'OutletPC', 'intel-cpu-bx80646i74790k', 337.89),
+('bhphotovideo-intel-cpu-bx80646i74790k', 'B&H Photo Video', 'intel-cpu-bx80646i74790k', 337.99),
+('microcenter-intel-cpu-bx80646i74790k', 'Micro Center', 'intel-cpu-bx80646i74790k', 249.99),
+('ncixus-intel-cpu-bx80646i74790k', 'NCIX US', 'intel-cpu-bx80646i74790k', 334.99),
+('bestbuy-intel-cpu-bx80646i74790k', 'Best Buy', 'intel-cpu-bx80646i74790k', 339.99),
+('superbiiz-intel-cpu-bx80646i74790k', 'SuperBiiz', 'intel-cpu-bx80646i74790k', 319.99),
+('newegg-intel-cpu-bx80646i74790k', 'Newegg', 'intel-cpu-bx80646i74790k', 339.99),
+('microcenter-intel-cpu-bx80662i76700k', 'Micro Center', 'intel-cpu-bx80662i76700k', 359.99),
+('outletpc-intel-cpu-bx80662i76700k', 'OutletPC', 'intel-cpu-bx80662i76700k', 698.89),
+('bhphotovideo-intel-cpu-bx80662i56600k', 'B&H Photo Video', 'intel-cpu-bx80662i56600k', 289.99),
+('microcenter-intel-cpu-bx80662i56600k', 'Micro Center', 'intel-cpu-bx80662i56600k', 219.99),
+('outletpc-intel-cpu-bx80662i56600k', 'OutletPC', 'intel-cpu-bx80662i56600k', 349.98),
+('newegg-intel-cpu-bx80662i56600k', 'Newegg', 'intel-cpu-bx80662i56600k', 273.98),
+('amazon-intel-cpu-bx80646i54460', 'Amazon', 'intel-cpu-bx80646i54460', 180.99),
+('directron-intel-cpu-bx80646i54460', 'Directron', 'intel-cpu-bx80646i54460', 187.99),
+('outletpc-intel-cpu-bx80646i54460', 'OutletPC', 'intel-cpu-bx80646i54460', 174.88),
+('bhphotovideo-intel-cpu-bx80646i54460', 'B&H Photo Video', 'intel-cpu-bx80646i54460', 180.99),
+('ncixus-intel-cpu-bx80646i54460', 'NCIX US', 'intel-cpu-bx80646i54460', 199.98),
+('bestbuy-intel-cpu-bx80646i54460', 'Best Buy', 'intel-cpu-bx80646i54460', 189.99),
+('superbiiz-intel-cpu-bx80646i54460', 'SuperBiiz', 'intel-cpu-bx80646i54460', 174.99),
+('newegg-intel-cpu-bx80646i54460', 'Newegg', 'intel-cpu-bx80646i54460', 179.99);
+
+-- Insert motherboard components and prices
+INSERT INTO `motherboard` (`comp_id`, `name`, `manufacturer`, `form_factor`, `socket`) VALUES
+('asrock-motherboard-fatal1ty970performance', 'ASRock Fatal1ty 970 Performance ATX AM3+/AM3 Motherboard', 'ASRock', 'ATX', 'AM3+/AM3'),
+('msi-motherboard-z97gaming5', 'MSI Z97-GAMING 5 ATX LGA1150 Motherboard', 'MSI', 'ATX', 'LGA1150'),
+('asus-motherboard-z170a', 'Asus Z170-A ATX LGA1151 Motherboard', 'Asus', 'ATX', 'LGA1151'),
+('msi-motherboard-970gaming', 'MSI 970 GAMING ATX AM3+ Motherboard', 'MSI', 'ATX', 'AM3+'),
+('msi-motherboard-h81mp33', 'MSI H81M-P33 Micro ATX LGA1150 Motherboard', 'MSI', 'Micro ATX', 'LGA1150');
+
+INSERT INTO `sold_by` (`sold_id`, `retail_name`, `comp_id`, `price`) VALUES
+('microcenter-asrock-motherboard-fatal1ty970performance', 'Micro Center', 'asrock-motherboard-fatal1ty970performance', 79.99),
+('ncixus-asrock-motherboard-fatal1ty970performance', 'NCIX US', 'asrock-motherboard-fatal1ty970performance', 104.99),
+('pcmall-msi-motherboard-z97gaming5', 'PC Mall', 'msi-motherboard-z97gaming5', 155.98),
+('outletpc-msi-motherboard-z97gaming5', 'OutletPC', 'msi-motherboard-z97gaming5', 144.89),
+('ncixus-msi-motherboard-z97gaming5', 'NCIX US', 'msi-motherboard-z97gaming5', 149.99),
+('newegg-msi-motherboard-z97gaming5', 'Newegg', 'msi-motherboard-z97gaming5', 124.99),
+('bhphotovideo-msi-motherboard-z97gaming5', 'B&H Photo Video', 'msi-motherboard-z97gaming5', 139.99),
+('directron-msi-motherboard-z97gaming5', 'Directron', 'msi-motherboard-z97gaming5', 144.99),
+('superbiiz-msi-motherboard-z97gaming5', 'SuperBiiz', 'msi-motherboard-z97gaming5', 144.99),
+('macmall-msi-motherboard-z97gaming5', 'MacMall', 'msi-motherboard-z97gaming5', 148.99),
+('newegg-asus-motherboard-z170a', 'Newegg', 'asus-motherboard-z170a', 158.99),
+('bhphotovideo-asus-motherboard-z170a', 'B&H Photo Video', 'asus-motherboard-z170a', 158.99),
+('ncixus-asus-motherboard-z170a', 'NCIX US', 'asus-motherboard-z170a', 169.99),
+('superbiiz-asus-motherboard-z170a', 'SuperBiiz', 'asus-motherboard-z170a', 153.99),
+('amazon-asus-motherboard-z170a', 'Amazon', 'asus-motherboard-z170a', 158.99),
+('newegg-msi-motherboard-970gaming', 'Newegg', 'msi-motherboard-970gaming', 102.98),
+('bhphotovideo-msi-motherboard-970gaming', 'B&H Photo Video', 'msi-motherboard-970gaming', 96.99),
+('ncixus-msi-motherboard-970gaming', 'NCIX US', 'msi-motherboard-970gaming', 109.99),
+('superbiiz-msi-motherboard-970gaming', 'SuperBiiz', 'msi-motherboard-970gaming', 93.99),
+('outletpc-msi-motherboard-970gaming', 'OutletPC', 'msi-motherboard-970gaming', 96.88),
+('bhphotovideo-msi-motherboard-h81mp33', 'B&H Photo Video', 'msi-motherboard-h81mp33', 52.98),
+('directron-msi-motherboard-h81mp33', 'Directron', 'msi-motherboard-h81mp33', 45.99),
+('ncixus-msi-motherboard-h81mp33', 'NCIX US', 'msi-motherboard-h81mp33', 49.99),
+('outletpc-msi-motherboard-h81mp33', 'OutletPC', 'msi-motherboard-h81mp33', 45.98),
+('superbiiz-msi-motherboard-h81mp33', 'SuperBiiz', 'msi-motherboard-h81mp33', 45.99);
+
+-- Insert ram components and prices
+INSERT INTO `ram` (`comp_id`, `name`, `manufacturer`, `capacity`, `speed`) VALUES
+('gskill-memory-f312800cl9d8gbxl', 'G.Skill Ripjaws X Series 8GB (2 x 4GB) DDR3-1600 Memory', 'G.Skill', '8GB (2 x 4GB)', 'DDR3-1600'),
+('corsair-memory-cmy16gx3m2a1866c9r', 'Corsair Vengeance Pro 16GB (2 x 8GB) DDR3-1866 Memory', 'Corsair', '16GB (2 x 8GB)', 'DDR3-1866'),
+('kingston-memory-hx318c10fbk28', 'Kingston HyperX Fury Black 8GB (2 x 4GB) DDR3-1866 Memory', 'Kingston', '8GB (2 x 4GB)', 'DDR3-1866'),
+('kingston-memory-hx318c10fbk216', 'Kingston HyperX Fury Black 16GB (2 x 8GB) DDR3-1866 Memory', 'Kingston', '16GB (2 x 8GB)', 'DDR3-1866'),
+('gskill-memory-f42400c15d16gvr', 'G.Skill Ripjaws V Series 16GB (2 x 8GB) DDR4-2400 Memory', 'G.Skill', '16GB (2 x 8GB)', 'DDR4-2400');
+
+INSERT INTO `sold_by` (`sold_id`, `retail_name`, `comp_id`, `price`) VALUES
+('newegg-gskill-memory-f312800cl9d8gbxl', 'Newegg', 'gskill-memory-f312800cl9d8gbxl', 42.99),
+('ncixus-gskill-memory-f312800cl9d8gbxl', 'NCIX US', 'gskill-memory-f312800cl9d8gbxl', 99.99),
+('outletpc-gskill-memory-f312800cl9d8gbxl', 'OutletPC', 'gskill-memory-f312800cl9d8gbxl', 42.89),
+('amazon-gskill-memory-f312800cl9d8gbxl', 'Amazon', 'gskill-memory-f312800cl9d8gbxl', 49.49),
+('newegg-corsair-memory-cmy16gx3m2a1866c9r', 'Newegg', 'corsair-memory-cmy16gx3m2a1866c9r', 84.99),
+('outletpc-corsair-memory-cmy16gx3m2a1866c9r', 'OutletPC', 'corsair-memory-cmy16gx3m2a1866c9r', 84.89),
+('amazon-corsair-memory-cmy16gx3m2a1866c9r', 'Amazon', 'corsair-memory-cmy16gx3m2a1866c9r', 94.98),
+('newegg-kingston-memory-hx318c10fbk28', 'Newegg', 'kingston-memory-hx318c10fbk28', 43.49),
+('superbiiz-kingston-memory-hx318c10fbk28', 'SuperBiiz', 'kingston-memory-hx318c10fbk28', 43.49),
+('ncixus-kingston-memory-hx318c10fbk28', 'NCIX US', 'kingston-memory-hx318c10fbk28', 59.99),
+('amazon-kingston-memory-hx318c10fbk28', 'Amazon', 'kingston-memory-hx318c10fbk28', 43.49),
+('macmall-kingston-memory-hx318c10fbk216', 'MacMall', 'kingston-memory-hx318c10fbk216', 87.00),
+('superbiiz-kingston-memory-hx318c10fbk216', 'SuperBiiz', 'kingston-memory-hx318c10fbk216', 74.99),
+('amazon-kingston-memory-hx318c10fbk216', 'Amazon', 'kingston-memory-hx318c10fbk216', 81.99),
+('newegg-kingston-memory-hx318c10fbk216', 'Newegg', 'kingston-memory-hx318c10fbk216', 81.99),
+('pcmall-kingston-memory-hx318c10fbk216', 'PC Mall', 'kingston-memory-hx318c10fbk216', 90.99),
+('ncixus-kingston-memory-hx318c10fbk216', 'NCIX US', 'kingston-memory-hx318c10fbk216', 179.99),
+('outletpc-kingston-memory-hx318c10fbk216', 'OutletPC', 'kingston-memory-hx318c10fbk216', 79.89),
+('newegg-gskill-memory-f42400c15d16gvr', 'Newegg', 'gskill-memory-f42400c15d16gvr', 89.99);
+
+-- Insert storage components and prices
+INSERT INTO `storage` (`comp_id`, `name`, `manufacturer`, `capacity`, `type`) VALUES
+('seagate-internal-hard-drive-st1000dm003', 'Seagate Barracuda 1TB 3.5" 7200RPM Internal Hard Drive', 'Seagate', '1TB', 'HDD'),
+('seagate-internal-hard-drive-st2000dm001', 'Seagate Barracuda 2TB 3.5" 7200RPM Internal Hard Drive', 'Seagate', '2TB', 'HDD'),
+('ocz-internal-hard-drive-arc10025sat3240g', 'OCZ ARC 100 240GB 2.5" Solid State Drive', 'OCZ', '240GB', 'SSD'),
+('sandisk-internal-hard-drive-sdssdhii480gg25', 'Sandisk Ultra II 480GB 2.5" Solid State Drive', 'Sandisk', '480GB', 'SSD'),
+('sandisk-internal-hard-drive-sdssdhii960gg25', 'Sandisk Ultra II 960GB 2.5" Solid State Drive', 'Sandisk', '960GB', 'SSD');
+
+INSERT INTO `sold_by` (`sold_id`, `retail_name`, `comp_id`, `price`) VALUES
+('newegg-seagate-internal-hard-drive-st1000dm003', 'Newegg', 'seagate-internal-hard-drive-st1000dm003', 51.99),
+('outletpc-seagate-internal-hard-drive-st1000dm003', 'OutletPC', 'seagate-internal-hard-drive-st1000dm003', 45.88),
+('otherworldcomputing-seagate-internal-hard-drive-st1000dm003', 'Other World Computing', 'seagate-internal-hard-drive-st1000dm003', 66.47),
+('microcenter-seagate-internal-hard-drive-st1000dm003', 'Micro Center', 'seagate-internal-hard-drive-st1000dm003', 49.99),
+('ncixus-seagate-internal-hard-drive-st1000dm003', 'NCIX US', 'seagate-internal-hard-drive-st1000dm003', 54.99),
+('adorama-seagate-internal-hard-drive-st1000dm003', 'Adorama', 'seagate-internal-hard-drive-st1000dm003', 54.94),
+('superbiiz-seagate-internal-hard-drive-st1000dm003', 'SuperBiiz', 'seagate-internal-hard-drive-st1000dm003', 45.99),
+('directron-seagate-internal-hard-drive-st1000dm003', 'Directron', 'seagate-internal-hard-drive-st1000dm003', 48.99),
+('amazon-seagate-internal-hard-drive-st1000dm003', 'Amazon', 'seagate-internal-hard-drive-st1000dm003', 47.99),
+('pcmall-seagate-internal-hard-drive-st1000dm003', 'PC Mall', 'seagate-internal-hard-drive-st1000dm003', 55.98),
+('macmall-seagate-internal-hard-drive-st1000dm003', 'MacMall', 'seagate-internal-hard-drive-st1000dm003', 51.94),
+('dellbusiness-seagate-internal-hard-drive-st1000dm003', 'Dell Business', 'seagate-internal-hard-drive-st1000dm003', 69.99),
+('bhphotovideo-seagate-internal-hard-drive-st1000dm003', 'B&H Photo Video', 'seagate-internal-hard-drive-st1000dm003', 47.99),
+('newegg-seagate-internal-hard-drive-st2000dm001', 'Newegg', 'seagate-internal-hard-drive-st2000dm001', 74.99),
+('outletpc-seagate-internal-hard-drive-st2000dm001', 'OutletPC', 'seagate-internal-hard-drive-st2000dm001', 67.88),
+('otherworldcomputing-seagate-internal-hard-drive-st2000dm001', 'Other World Computing', 'seagate-internal-hard-drive-st2000dm001', 87.99),
+('microcenter-seagate-internal-hard-drive-st2000dm001', 'Micro Center', 'seagate-internal-hard-drive-st2000dm001', 69.99),
+('ncixus-seagate-internal-hard-drive-st2000dm001', 'NCIX US', 'seagate-internal-hard-drive-st2000dm001', 81.90),
+('adorama-seagate-internal-hard-drive-st2000dm001', 'Adorama', 'seagate-internal-hard-drive-st2000dm001', 74.99),
+('superbiiz-seagate-internal-hard-drive-st2000dm001', 'SuperBiiz', 'seagate-internal-hard-drive-st2000dm001', 67.99),
+('directron-seagate-internal-hard-drive-st2000dm001', 'Directron', 'seagate-internal-hard-drive-st2000dm001', 69.99),
+('amazon-seagate-internal-hard-drive-st2000dm001', 'Amazon', 'seagate-internal-hard-drive-st2000dm001', 74.99),
+('pcmall-seagate-internal-hard-drive-st2000dm001', 'PC Mall', 'seagate-internal-hard-drive-st2000dm001', 80.98),
+('macmall-seagate-internal-hard-drive-st2000dm001', 'MacMall', 'seagate-internal-hard-drive-st2000dm001', 75.86),
+('bhphotovideo-seagate-internal-hard-drive-st2000dm001', 'B&H Photo Video', 'seagate-internal-hard-drive-st2000dm001', 76.65),
+('amazon-ocz-internal-hard-drive-arc10025sat3240g', 'Amazon', 'ocz-internal-hard-drive-arc10025sat3240g', 77.29),
+('newegg-ocz-internal-hard-drive-arc10025sat3240g', 'Newegg', 'ocz-internal-hard-drive-arc10025sat3240g', 90.98),
+('macmall-ocz-internal-hard-drive-arc10025sat3240g', 'MacMall', 'ocz-internal-hard-drive-arc10025sat3240g', 104.47),
+('outletpc-ocz-internal-hard-drive-arc10025sat3240g', 'OutletPC', 'ocz-internal-hard-drive-arc10025sat3240g', 79.44),
+('newegg-sandisk-internal-hard-drive-sdssdhii480gg25', 'Newegg', 'sandisk-internal-hard-drive-sdssdhii480gg25', 149.03),
+('adorama-sandisk-internal-hard-drive-sdssdhii480gg25', 'Adorama', 'sandisk-internal-hard-drive-sdssdhii480gg25', 149.99),
+('outletpc-sandisk-internal-hard-drive-sdssdhii480gg25', 'OutletPC', 'sandisk-internal-hard-drive-sdssdhii480gg25', 159.89),
+('amazon-sandisk-internal-hard-drive-sdssdhii480gg25', 'Amazon', 'sandisk-internal-hard-drive-sdssdhii480gg25', 149.03),
+('macmall-sandisk-internal-hard-drive-sdssdhii480gg25', 'MacMall', 'sandisk-internal-hard-drive-sdssdhii480gg25', 175.33),
+('bestbuy-sandisk-internal-hard-drive-sdssdhii480gg25', 'Best Buy', 'sandisk-internal-hard-drive-sdssdhii480gg25', 149.99),
+('microcenter-sandisk-internal-hard-drive-sdssdhii480gg25', 'Micro Center', 'sandisk-internal-hard-drive-sdssdhii480gg25', 139.99),
+('bhphotovideo-sandisk-internal-hard-drive-sdssdhii480gg25', 'B&H Photo Video', 'sandisk-internal-hard-drive-sdssdhii480gg25', 149.99),
+('ncixus-sandisk-internal-hard-drive-sdssdhii480gg25', 'NCIX US', 'sandisk-internal-hard-drive-sdssdhii480gg25', 255.55),
+('newegg-sandisk-internal-hard-drive-sdssdhii960gg25', 'Newegg', 'sandisk-internal-hard-drive-sdssdhii960gg25', 249.99),
+('adorama-sandisk-internal-hard-drive-sdssdhii960gg25', 'Adorama', 'sandisk-internal-hard-drive-sdssdhii960gg25', 249.99),
+('outletpc-sandisk-internal-hard-drive-sdssdhii960gg25', 'OutletPC', 'sandisk-internal-hard-drive-sdssdhii960gg25', 249.88),
+('amazon-sandisk-internal-hard-drive-sdssdhii960gg25', 'Amazon', 'sandisk-internal-hard-drive-sdssdhii960gg25', 268.85),
+('bestbuy-sandisk-internal-hard-drive-sdssdhii960gg25', 'Best Buy', 'sandisk-internal-hard-drive-sdssdhii960gg25', 249.99),
+('bhphotovideo-sandisk-internal-hard-drive-sdssdhii960gg25', 'B&H Photo Video', 'sandisk-internal-hard-drive-sdssdhii960gg25', 249.99),
+('ncixus-sandisk-internal-hard-drive-sdssdhii960gg25', 'NCIX US', 'sandisk-internal-hard-drive-sdssdhii960gg25', 428.99);
+
+-- Insert gpu components and prices
+INSERT INTO `gpu` (`comp_id`, `name`, `manufacturer`, `clock_speed`, `vram`) VALUES
+('powercolor-video-card-axr93804gbd5ppdhe', 'PowerColor Radeon R9 380 4GB PCS+ Video Card', 'PowerColor', '980MHz', '4GB'),
+('sapphire-video-card-100382ntoc2l', 'Sapphire Radeon R9 390 8GB Nitro Video Card', 'Sapphire', '1.04Ghz', '8GB'),
+('sapphire-video-card-100362sr', 'Sapphire Radeon R9 290 4GB Video Card', 'Sapphire', '947MHz', '4GB'),
+('zotac-video-card-zt7060510m', 'Zotac GeForce GTX 750 Ti 2GB Video Card', 'Zotac', '1.03Ghz', '2GB'),
+('sapphire-video-card-100384nt4goc2l', 'Sapphire Radeon R9 380 4GB NITRO Dual-X OC Video Card', 'Sapphire', '1.01Ghz', '4GB');
+
+INSERT INTO `sold_by` (`sold_id`, `retail_name`, `comp_id`, `price`) VALUES
+('superbiiz-powercolor-video-card-axr93804gbd5ppdhe', 'SuperBiiz', 'powercolor-video-card-axr93804gbd5ppdhe', 207.99),
+('bhphotovideo-powercolor-video-card-axr93804gbd5ppdhe', 'B&H Photo Video', 'powercolor-video-card-axr93804gbd5ppdhe', 219.89),
+('amazon-powercolor-video-card-axr93804gbd5ppdhe', 'Amazon', 'powercolor-video-card-axr93804gbd5ppdhe', 231.28),
+('newegg-powercolor-video-card-axr93804gbd5ppdhe', 'Newegg', 'powercolor-video-card-axr93804gbd5ppdhe', 159.99),
+('outletpc-powercolor-video-card-axr93804gbd5ppdhe', 'OutletPC', 'powercolor-video-card-axr93804gbd5ppdhe', 212.98),
+('ncixus-powercolor-video-card-axr93804gbd5ppdhe', 'NCIX US', 'powercolor-video-card-axr93804gbd5ppdhe', 299.99),
+('newegg-sapphire-video-card-100382ntoc2l', 'Newegg', 'sapphire-video-card-100382ntoc2l', 325.98),
+('newegg-sapphire-video-card-100362sr', 'Newegg', 'sapphire-video-card-100362sr', 213.98),
+('newegg-zotac-video-card-zt7060510m', 'Newegg', 'zotac-video-card-zt7060510m', 107.98),
+('amazon-zotac-video-card-zt7060510m', 'Amazon', 'zotac-video-card-zt7060510m', 139.86),
+('superbiiz-zotac-video-card-zt7060510m', 'SuperBiiz', 'zotac-video-card-zt7060510m', 108.99),
+('newegg-sapphire-video-card-100384nt4goc2l', 'Newegg', 'sapphire-video-card-100384nt4goc2l', 208.98);
+
+-- Insert psu components and prices
+INSERT INTO `psu` (`comp_id`, `name`, `manufacturer`, `wattage`) VALUES
+('corsair-power-supply-cx600m', 'Corsair CX 600W 80+ Bronze Certified Semi-Modular ATX Power Supply', 'Corsair', '600 Watts'),
+('evga-power-supply-120g10650xr', 'EVGA SuperNOVA NEX 650W 80+ Gold Certified Fully-Modular ATX Power Supply', 'EVGA', '650 Watts'),
+('corsair-power-supply-cx500m', 'Corsair CX 500W 80+ Bronze Certified Semi-Modular ATX Power Supply', 'Corsair', '500 Watts'),
+('evga-power-supply-220g20750xr', 'EVGA 750W 80+ Gold Certified Fully-Modular ATX Power Supply', 'EVGA', '750 Watts'),
+('evga-power-supply-100w10500kr', 'EVGA 500W 80+ Certified ATX Power Supply', 'EVGA', '500 Watts');
+
+INSERT INTO `sold_by` (`sold_id`, `retail_name`, `comp_id`, `price`) VALUES
+('newegg-corsair-power-supply-cx600m', 'Newegg', 'corsair-power-supply-cx600m', 44.99),
+('pcmall-corsair-power-supply-cx600m', 'PC Mall', 'corsair-power-supply-cx600m', 99.98),
+('macmall-corsair-power-supply-cx600m', 'MacMall', 'corsair-power-supply-cx600m', 70.95),
+('ncixus-corsair-power-supply-cx600m', 'NCIX US', 'corsair-power-supply-cx600m', 84.99),
+('amazon-corsair-power-supply-cx600m', 'Amazon', 'corsair-power-supply-cx600m', 64.99),
+('directron-corsair-power-supply-cx600m', 'Directron', 'corsair-power-supply-cx600m', 79.99),
+('outletpc-corsair-power-supply-cx600m', 'OutletPC', 'corsair-power-supply-cx600m', 79.49),
+('newegg-evga-power-supply-120g10650xr', 'Newegg', 'evga-power-supply-120g10650xr', 54.99),
+('pcmall-evga-power-supply-120g10650xr', 'PC Mall', 'evga-power-supply-120g10650xr', 90.98),
+('macmall-evga-power-supply-120g10650xr', 'MacMall', 'evga-power-supply-120g10650xr', 74.88),
+('ncixus-evga-power-supply-120g10650xr', 'NCIX US', 'evga-power-supply-120g10650xr', 84.99),
+('amazon-evga-power-supply-120g10650xr', 'Amazon', 'evga-power-supply-120g10650xr', 74.88),
+('superbiiz-evga-power-supply-120g10650xr', 'SuperBiiz', 'evga-power-supply-120g10650xr', 76.99),
+('newegg-corsair-power-supply-cx500m', 'Newegg', 'corsair-power-supply-cx500m', 51.98),
+('macmall-corsair-power-supply-cx500m', 'MacMall', 'corsair-power-supply-cx500m', 62.08),
+('pcmall-corsair-power-supply-cx500m', 'PC Mall', 'corsair-power-supply-cx500m', 87.98),
+('amazon-corsair-power-supply-cx500m', 'Amazon', 'corsair-power-supply-cx500m', 59.99),
+('outletpc-corsair-power-supply-cx500m', 'OutletPC', 'corsair-power-supply-cx500m', 61.89),
+('newegg-evga-power-supply-220g20750xr', 'Newegg', 'evga-power-supply-220g20750xr', 109.99),
+('pcmall-evga-power-supply-220g20750xr', 'PC Mall', 'evga-power-supply-220g20750xr', 126.98),
+('macmall-evga-power-supply-220g20750xr', 'MacMall', 'evga-power-supply-220g20750xr', 103.86),
+('ncixus-evga-power-supply-220g20750xr', 'NCIX US', 'evga-power-supply-220g20750xr', 119.99),
+('amazon-evga-power-supply-220g20750xr', 'Amazon', 'evga-power-supply-220g20750xr', 89.99),
+('superbiiz-evga-power-supply-220g20750xr', 'SuperBiiz', 'evga-power-supply-220g20750xr', 111.99),
+('outletpc-evga-power-supply-220g20750xr', 'OutletPC', 'evga-power-supply-220g20750xr', 119.89),
+('newegg-evga-power-supply-100w10500kr', 'Newegg', 'evga-power-supply-100w10500kr', 43.98),
+('pcmall-evga-power-supply-100w10500kr', 'PC Mall', 'evga-power-supply-100w10500kr', 46.98),
+('amazon-evga-power-supply-100w10500kr', 'Amazon', 'evga-power-supply-100w10500kr', 39.99),
+('macmall-evga-power-supply-100w10500kr', 'MacMall', 'evga-power-supply-100w10500kr', 48.24),
+('ncixus-evga-power-supply-100w10500kr', 'NCIX US', 'evga-power-supply-100w10500kr', 44.99),
+('superbiiz-evga-power-supply-100w10500kr', 'SuperBiiz', 'evga-power-supply-100w10500kr', 38.49);
+
+-- Insert comp_case components and prices
+INSERT INTO `comp_case` (`comp_id`, `name`, `manufacturer`, `form_factor`) VALUES
+('nzxt-case-caph410w1', 'NZXT Phantom 410 (White) ATX Mid Tower Case', 'NZXT', 'ATX Mid Tower'),
+('corsair-case-cc9011075ww', 'Corsair 100R ATX Mid Tower Case', 'Corsair', 'ATX Mid Tower'),
+('thermaltake-case-ca1b200m1wn00', 'Thermaltake Versa H21 Window ATX Mid Tower Case', 'Thermaltake', 'ATX Mid Tower'),
+('nzxt-case-cas21w2b1', 'NZXT Source 210 Window ATX Mid Tower Case', 'NZXT', 'ATX Mid Tower'),
+('thermaltake-case-ca1c200m1wn00', 'Thermaltake Versa H25 ATX Mid Tower Case', 'Thermaltake', 'ATX Mid Tower');
+
+INSERT INTO `sold_by` (`sold_id`, `retail_name`, `comp_id`, `price`) VALUES
+('superbiiz-nzxt-case-caph410w1', 'SuperBiiz', 'nzxt-case-caph410w1', 85.99),
+('nzxt-nzxt-case-caph410w1', 'NZXT', 'nzxt-case-caph410w1', 99.99),
+('bestbuy-nzxt-case-caph410w1', 'Best Buy', 'nzxt-case-caph410w1', 99.99),
+('ncixus-nzxt-case-caph410w1', 'NCIX US', 'nzxt-case-caph410w1', 129.99),
+('bhphotovideo-nzxt-case-caph410w1', 'B&H Photo Video', 'nzxt-case-caph410w1', 89.99),
+('amazon-nzxt-case-caph410w1', 'Amazon', 'nzxt-case-caph410w1', 89.99),
+('newegg-nzxt-case-caph410w1', 'Newegg', 'nzxt-case-caph410w1', 89.99),
+('amazon-corsair-case-cc9011075ww', 'Amazon', 'corsair-case-cc9011075ww', 48.99),
+('microcenter-corsair-case-cc9011075ww', 'Micro Center', 'corsair-case-cc9011075ww', 37.99),
+('newegg-corsair-case-cc9011075ww', 'Newegg', 'corsair-case-cc9011075ww', 48.99),
+('bhphotovideo-corsair-case-cc9011075ww', 'B&H Photo Video', 'corsair-case-cc9011075ww', 59.58),
+('ncixus-corsair-case-cc9011075ww', 'NCIX US', 'corsair-case-cc9011075ww', 49.99),
+('superbiiz-thermaltake-case-ca1b200m1wn00', 'SuperBiiz', 'thermaltake-case-ca1b200m1wn00', 42.99),
+('amazon-thermaltake-case-ca1b200m1wn00', 'Amazon', 'thermaltake-case-ca1b200m1wn00', 49.99),
+('directron-thermaltake-case-ca1b200m1wn00', 'Directron', 'thermaltake-case-ca1b200m1wn00', 42.99),
+('newegg-thermaltake-case-ca1b200m1wn00', 'Newegg', 'thermaltake-case-ca1b200m1wn00', 24.99),
+('newegg-nzxt-case-cas21w2b1', 'Newegg', 'nzxt-case-cas21w2b1', 31.99),
+('superbiiz-thermaltake-case-ca1c200m1wn00', 'SuperBiiz', 'thermaltake-case-ca1c200m1wn00', 47.99),
+('amazon-thermaltake-case-ca1c200m1wn00', 'Amazon', 'thermaltake-case-ca1c200m1wn00', 56.97),
+('newegg-thermaltake-case-ca1c200m1wn00', 'Newegg', 'thermaltake-case-ca1c200m1wn00', 39.98);
+
