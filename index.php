@@ -98,8 +98,8 @@
 							$result2 = $conn->query($sql);
 							$row2 = $result2->fetch_array();
 							
-							echo "<td>".$row2["manufacturer"]."&nbsp;".$row2["name"]."&nbsp;(".$row2["retail_name"].")<br>
-								 $".$row2["price"]."<br>
+							echo "<td>".$row2["manufacturer"]."&nbsp;".$row2["name"]."<br>
+								 $".$row2["price"]."&nbsp;(".$row2["retail_name"].")<br>
 								 <a href='".strtolower($component_array[$x]).".php?build_name=".$row["build_name"]."'>Change this!</a></td>";
 						}
 							
