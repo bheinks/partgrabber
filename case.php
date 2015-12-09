@@ -17,7 +17,12 @@
 			$valid_login = false;
 		}
 		
-		$build_name = $_GET["build_name"];	
+		$build_name = $_GET["build_name"];
+		
+		if(isset($_POST["search_field"]))
+			$search_field = $_POST["search_field"];
+		else
+			$search_field = "";	
 	?>
 	
 </head>
@@ -25,14 +30,31 @@
 	
 	<a href="index.php">Back</a>
 	
-	<p style="font-weight: bold; font-size: 22px; text-align: center;">Cases</p>	
+	<p style="font-weight: bold; font-size: 22px; text-align: center;">Cases</p>
 	
-	<table border align="center">
+	<div style="text-align: center;">
+		<form action="case.php?build_name=<?=$build_name?>" method="POST">
+			<b>Narrow Search Results:</b><br>
+			Search:
+			<input type="test" name="search_field" placeholder="<?=$search_field?>"><br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>		
+	
+	<table border align="center" style="text-align: center;">
 		
 		<?php
 			// Display all available CPUs
 			$sql = "SELECT *
-					FROM comp_case";
+					FROM comp_case
+					WHERE 1=1";
+			if($search_field != ""){
+				$sql = $sql." AND (
+					   manufacturer LIKE('%".$search_field."%')
+					OR name LIKE('%".$search_field."%')
+					OR form_factor LIKE('%".$search_field."%')						
+				);";				
+			}
 			$result = $conn->query($sql);
 			while($row = $result->fetch_array()){
 				echo "<tr>";
@@ -49,9 +71,9 @@
 							$result2 = $conn->query($sql);
 							while($row2 = $result2->fetch_array()){
 								echo "<tr>";
-									echo "<td>".$row2["retail_name"]."</td>";
-									echo "<td>$".$row2["price"]."</td>";
-									echo "<td><a href='addpartredirect.php?
+									echo "<td style='width:160px;'>".$row2["retail_name"]."</td>";
+									echo "<td style='width:80px;'>$".$row2["price"]."</td>";
+									echo "<td style='width:90px;'><a href='addpartredirect.php?
 											build_name=".$build_name."&
 											comp_id=".$row2["sold_id"]."&
 											comp_type=case

@@ -18,7 +18,7 @@
 
 <style>
     body{
-        background-image: url("circuit.jpg");
+        background-image: url("image/circuit.jpg");
     }
     table{
         background-color: white;

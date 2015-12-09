@@ -13,8 +13,11 @@
 			$valid_login = true;
 		}else{
 			$username = "";
-			$login_msg = $_SESSION['login_msg'];
 			$valid_login = false;
+			if(isset($_SESSION['valid_login']))
+				$login_msg = $_SESSION['login_msg'];
+			else 
+				$login_msg = "";			
 		}	
 	?>
 	
