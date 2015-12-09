@@ -24,3 +24,5 @@
         background-color: white;
     }
 </style>
+
+<link rel="icon" type="image/ico" href="image/favicon.ico"/>

@@ -2,6 +2,7 @@
 
 <html>
 <head>
+	
 	<title>PartGrabber [test version]</title>
 	<?php require "database.inc.php"; ?>
 	
@@ -57,11 +58,6 @@
 	
 	<p style="text-align: center;"><b>My Saved Builds!<br></b>
 	<a href="createbuild.php">[Create a new build]</a></p>
-	
-	<?php
-	
-	
-	?>
 
 	<!--- Build up table of resulting saved builds --->
 	<table border align="center">

@@ -30,18 +30,23 @@
 			
 			// If no match, invalid password
 			else
-				$_SESSION['login_msg'] = "Incorrect password";
+				$_SESSION['login_msg'] = "Incorrect password. Not logged in.";
 		}
 		
 		// If no results found, create username
 		else{
-			$sql = "INSERT INTO user VALUES
-						('".$username_given."','".$password_given."');";
-				   echo $sql;
-			$conn->query($sql);	
-			$_SESSION['login_msg'] = "Created new user ".$username_given;
-			$_SESSION['valid_login'] = true;
-			
+			if($username_given != ""){
+				$sql = "INSERT INTO user VALUES
+							('".$username_given."','".$password_given."');";
+					echo $sql;
+				$conn->query($sql);	
+				$_SESSION['login_msg'] = "Created new user ".$username_given.".";
+				$_SESSION['valid_login'] = true;
+				$_SESSION['username'] = $username_given;
+			}
+			else{
+				$_SESSION['login_msg'] = "";
+			}		
 		}			
 	}	
 	
