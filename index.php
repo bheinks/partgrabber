@@ -12,13 +12,13 @@
 			$login_msg = "User ".$username." logged in!";
 			$valid_login = true;
 		}else{
-			$username = "";
+			$username = "invalid";
 			$valid_login = false;
 			if(isset($_SESSION['valid_login']))
 				$login_msg = $_SESSION['login_msg'];
 			else 
 				$login_msg = "";			
-		}	
+		}
 	?>
 	
 </head>
@@ -70,7 +70,7 @@
 			// Query database for saved build and store in $result
 			$sql = "SELECT *
 					FROM saved_build
-					WHERE username='$username'";
+					WHERE username = '".$username."';";
 			$result = $conn->query($sql);
 			
 			// Output header row of items in component_array[]
@@ -120,7 +120,7 @@
 				if((isset($_SESSION["compatibility"])) && ($_SESSION["compatibility"] != "")){
 					if($_SESSION["compatibility_build"] == $row["build_name"]){
 						echo "<tr style='text-align:center;'>";
-							echo "<td colspan='9'>";
+							echo "<td colspan='9' style='color: darkred; font-weight: bold;'>";
 								echo $_SESSION["compatibility"];
 							echo "</td>";
 						echo "</tr>";

@@ -19,8 +19,8 @@
 		
 		$build_name = $_GET["build_name"];	
 		
-		if(isset($_POST["search_field"]))
-			$search_field = $_POST["search_field"];
+		if(isset($_GET["search_field"]))
+			$search_field = $_GET["search_field"];
 		else
 			$search_field = "";
 	?>
@@ -33,11 +33,12 @@
 	<p style="font-weight: bold; font-size: 22px; text-align: center;">Power Supplies</p>
 	
 	<div style="text-align: center;">
-		<form action="psu.php?build_name=<?=$build_name?>" method="POST">
+		<form action="psu.php" method="GET">
 			<b>Narrow Search Results:</b><br>
 			Search:
-			<input type="test" name="search_field" placeholder="<?=$search_field?>"><br>
+			<input type="test" name="search_field" value="<?=$search_field?>"><br>
 			<input type="submit" value="Submit">
+			<input type="hidden" name="build_name" value="<?=$build_name?>">
 		</form>
 	</div>	
 	
